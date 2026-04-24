@@ -1,17 +1,16 @@
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_web_portfolio/app/controllers/language_controller.dart';
-import 'package:flutter_web_portfolio/app/controllers/scene_director.dart';
 import 'package:flutter_web_portfolio/app/controllers/scroll_controller.dart';
 import 'package:flutter_web_portfolio/app/core/constants/app_colors.dart';
 import 'package:flutter_web_portfolio/app/core/constants/app_dimensions.dart';
 import 'package:flutter_web_portfolio/app/core/constants/breakpoints.dart';
 import 'package:flutter_web_portfolio/app/core/constants/cinematic_curves.dart';
-import 'package:flutter_web_portfolio/app/widgets/cinematic_button.dart';
+import 'package:flutter_web_portfolio/app/widgets/premium_cta_button.dart';
 import 'package:flutter_web_portfolio/app/core/constants/durations.dart';
 import 'package:flutter_web_portfolio/app/widgets/scroll_indicator.dart';
 import 'package:flutter_web_portfolio/app/widgets/shader_text_reveal.dart';
@@ -98,7 +97,7 @@ class _HomeSectionState extends State<HomeSection>
   /// Returns [Matrix4.identity] on mobile/tablet to avoid touch jank.
   Matrix4 _buildHeroTransform(double screenWidth) {
     if (screenWidth < 900) return Matrix4.identity();
-    const maxTilt = 2.0 * pi / 180.0; // 2 degrees
+    final maxTilt = 2.0 * math.pi / 180.0; // 2 degrees
     final dx = (_heroMousePos.dx - 0.5) * 2.0;
     final dy = (_heroMousePos.dy - 0.5) * 2.0;
     return Matrix4.identity()
@@ -141,6 +140,14 @@ class _HomeSectionState extends State<HomeSection>
         animation: _entranceCtrl,
         builder: (context, _) => Stack(
           children: [
+            // Hero Background Atmosphere (Smoke & Embers)
+            Positioned.fill(
+              child: Opacity(
+                opacity: _contentOpacity.value,
+                child: _HeroAtmosphere(mousePos: _heroMousePos),
+              ),
+            ),
+            
             // Main content
             Opacity(
               opacity: _contentOpacity.value,
@@ -332,14 +339,16 @@ class _AnimatedCTAButtonsState extends State<_AnimatedCTAButtons>
           spacing: 20,
           runSpacing: 16,
           children: [
-            CinematicButton(
+            PremiumCTAButton(
               label: viewWorkLabel,
               isPrimary: true,
+              icon: Icons.arrow_forward_rounded,
               onTap: () => Get.find<AppScrollController>()
                   .scrollToSection('projects'),
             ),
-            CinematicButton(
+            PremiumCTAButton(
               label: downloadCvLabel,
+              icon: Icons.download_rounded,
               onTap: () async {
                 final origin = Uri.base.origin;
                 final basePath = Uri.base.path.endsWith('/')
@@ -405,7 +414,6 @@ class _HeroNameWithGradient extends StatelessWidget {
         ValueListenableBuilder<bool>(
           valueListenable: HomeSection.entranceComplete,
           builder: (context, complete, _) {
-            final accent = Get.find<SceneDirector>().currentAccent.value;
             return AnimatedOpacity(
               opacity: complete ? 1.0 : 0.0,
               duration: AppDurations.entrance,
@@ -415,14 +423,15 @@ class _HeroNameWithGradient extends StatelessWidget {
                 child: ShaderMask(
                   blendMode: BlendMode.srcIn,
                   shaderCallback: (bounds) => LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                     colors: [
-                      AppColors.textBright,
-                      Color.lerp(
-                        AppColors.textBright,
-                        accent,
-                        0.20,
-                      )!,
+                      const Color(0xFFD4AF37), // Gold
+                      const Color(0xFFF9F295), // Light Gold
+                      const Color(0xFFD4AF37), // Gold
+                      const Color(0xFFB8860B), // Dark Gold
                     ],
+                    stops: const [0.0, 0.4, 0.6, 1.0],
                   ).createShader(bounds),
                   child: Text(
                     nameText,
@@ -437,4 +446,73 @@ class _HeroNameWithGradient extends StatelessWidget {
       ],
     );
   }
+}
+
+// ---------------------------------------------------------------------------
+// Hero Atmosphere: Smoke & Embers with Mouse Parallax
+// ---------------------------------------------------------------------------
+class _HeroAtmosphere extends StatelessWidget {
+  const _HeroAtmosphere({required this.mousePos});
+  final Offset mousePos;
+
+  @override
+  Widget build(BuildContext context) {
+    final dx = (mousePos.dx - 0.5) * 40;
+    final dy = (mousePos.dy - 0.5) * 40;
+
+    return Stack(
+      children: [
+        // Volumetric Smoke
+        Transform.translate(
+          offset: Offset(dx * 0.5, dy * 0.5),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                center: const Alignment(0, 0),
+                radius: 1.2,
+                colors: [
+                  Colors.white.withValues(alpha: 0.03),
+                  Colors.transparent,
+                ],
+              ),
+            ),
+          ),
+        ),
+        // Dust/Embers
+        Transform.translate(
+          offset: Offset(dx * 1.2, dy * 1.2),
+          child: CustomPaint(
+            painter: _HeroParticlePainter(),
+            size: Size.infinite,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _HeroParticlePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rng = math.Random(42);
+    final paint = Paint();
+    for (int i = 0; i < 40; i++) {
+      final x = rng.nextDouble() * size.width;
+      final y = rng.nextDouble() * size.height;
+      final s = rng.nextDouble() * 2 + 0.5;
+      final alpha = rng.nextDouble() * 0.2 + 0.05;
+      
+      paint.color = Colors.orangeAccent.withValues(alpha: alpha);
+      canvas.drawCircle(Offset(x, y), s, paint);
+      
+      if (s > 1.5) {
+        paint.maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+        canvas.drawCircle(Offset(x, y), s * 2, paint);
+        paint.maskFilter = null;
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }

@@ -45,9 +45,9 @@ final class SceneConfigs {
     gradient2: AppColors.heroGradient2,
     gradient3: AppColors.heroGradient3,
     accent: AppColors.heroAccent,
-    particleDensity: 0.6,
-    particleSpeed: 0.5,
-    vignetteIntensity: 0.3,
+    particleDensity: 0.4,
+    particleSpeed: 0.4,
+    vignetteIntensity: 0.25,
   );
 
   // Scene 1: About — Dune
@@ -56,9 +56,9 @@ final class SceneConfigs {
     gradient2: AppColors.aboutGradient2,
     gradient3: AppColors.aboutGradient3,
     accent: AppColors.aboutAccent,
-    particleDensity: 0.4,
-    particleSpeed: 0.3,
-    vignetteIntensity: 0.3,
+    particleDensity: 0.3,
+    particleSpeed: 0.2,
+    vignetteIntensity: 0.2,
   );
 
   // Scene 2: Experience — Matrix

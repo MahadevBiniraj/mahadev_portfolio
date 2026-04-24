@@ -1,10 +1,10 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_web_portfolio/app/core/constants/app_colors.dart';
 import 'package:flutter_web_portfolio/app/core/constants/cinematic_curves.dart';
 import 'package:flutter_web_portfolio/app/widgets/preloader_animations.dart';
+import 'package:flutter_web_portfolio/app/widgets/kollywood_title_reveal.dart';
 
 /// Cinematic preloader — a jaw-dropping intro sequence that plays once per
 /// session before revealing the main portfolio content.
@@ -29,9 +29,9 @@ class CinematicPreloader extends StatefulWidget {
     required this.child,
     this.onLoadingComplete,
     this.displayName = 'MAHADEV BINIRAJ',
-    this.tagline = 'Flutter Developer',
-    this.minimumDuration = const Duration(milliseconds: 1800),
-    this.exitDuration = const Duration(milliseconds: 500),
+    this.tagline = 'Flutter Full Stack Developer',
+    this.minimumDuration = const Duration(milliseconds: 5000),
+    this.exitDuration = const Duration(milliseconds: 800),
   });
 
   /// The main content revealed after the preloader finishes.
@@ -75,9 +75,6 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
   // ── Sequenced intervals off the master controller ────────────────────────
 
   Animation<double>? _bgFade;
-  Animation<double>? _nameReveal;
-  Animation<double>? _taglineFade;
-  Animation<double>? _progressAnim;
   Animation<double>? _exitReveal;
 
   bool _showContent = false;
@@ -116,27 +113,6 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
       CurvedAnimation(
         parent: master,
         curve: const Interval(0.0, 0.08, curve: Curves.easeOut),
-      ),
-    );
-
-    _nameReveal = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(
-        parent: master,
-        curve: const Interval(0.05, 0.42, curve: CinematicCurves.revealDecel),
-      ),
-    );
-
-    _taglineFade = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(
-        parent: master,
-        curve: const Interval(0.32, 0.55, curve: CinematicCurves.easeInOutCinematic),
-      ),
-    );
-
-    _progressAnim = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(
-        parent: master,
-        curve: const Interval(0.10, 0.78, curve: CinematicCurves.easeInOutCinematic),
       ),
     );
 
@@ -258,79 +234,12 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
                 ),
               ),
 
-              // Layer 4: Center content
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Name reveal
-                    LetterStaggerAnimation(
-                      text: widget.displayName,
-                      animation: _nameReveal!,
-                      style: GoogleFonts.spaceGrotesk(
-                        fontSize: _responsiveFontSize(context),
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: _responsiveLetterSpacing(context),
-                        color: AppColors.textBright,
-                        height: 1.0,
-                      ),
-                    ),
-
-                    const SizedBox(height: 8),
-
-                    // Accent line
-                    _AnimatedLine(animation: _nameReveal!),
-
-                    const SizedBox(height: 20),
-
-                    // Tagline
-                    Opacity(
-                      opacity: _taglineFade!.value,
-                      child: Transform.translate(
-                        offset: Offset(0, 8 * (1 - _taglineFade!.value)),
-                        child: Text(
-                          widget.tagline,
-                          style: GoogleFonts.inter(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w300,
-                            letterSpacing: 3,
-                            color: AppColors.textPrimary.withValues(
-                              alpha: 0.8,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    const SizedBox(height: 48),
-
-                    // Progress bar
-                    Opacity(
-                      opacity: _progressAnim!.value > 0 ? 1.0 : 0.0,
-                      child: GlowProgressBar(
-                        progress: _progressAnim!.value,
-                        width: _responsiveBarWidth(context),
-                        height: 1.5,
-                        color: AppColors.heroAccent,
-                      ),
-                    ),
-
-                    const SizedBox(height: 12),
-
-                    // Percentage counter
-                    Opacity(
-                      opacity: _progressAnim!.value > 0 ? 1.0 : 0.0,
-                      child: PercentageCounter(
-                        animation: _progressAnim!,
-                        style: GoogleFonts.jetBrainsMono(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          letterSpacing: 2,
-                          color: AppColors.heroAccent.withValues(alpha: 0.6),
-                        ),
-                      ),
-                    ),
-                  ],
+              // Layer 4: Kollywood Title Reveal
+              Positioned.fill(
+                child: KollywoodTitleReveal(
+                  displayName: widget.displayName,
+                  tagline: widget.tagline,
+                  progress: _master!.value,
                 ),
               ),
             ],
@@ -341,60 +250,7 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
 
   // ── Responsive helpers ───────────────────────────────────────────────────
 
-  double _responsiveFontSize(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
-    if (width < 480) return 24;
-    if (width < 768) return 32;
-    return 42;
-  }
-
-  double _responsiveLetterSpacing(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
-    if (width < 480) return 4;
-    if (width < 768) return 6;
-    return 10;
-  }
-
-  double _responsiveBarWidth(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
-    if (width < 480) return 160;
-    if (width < 768) return 200;
-    return 240;
-  }
 }
-
-// ---------------------------------------------------------------------------
-// Internal helper widgets
-// ---------------------------------------------------------------------------
-
-/// Draws a thin accent line that grows horizontally in sync with the name.
-class _AnimatedLine extends StatelessWidget {
-  const _AnimatedLine({required this.animation});
-  final Animation<double> animation;
-
-  @override
-  Widget build(BuildContext context) => AnimatedBuilder(
-    animation: animation,
-    builder: (_, __) {
-      final width = 60.0 * animation.value;
-      return Container(
-        width: width,
-        height: 1,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              AppColors.heroAccent.withValues(alpha: 0.0),
-              AppColors.heroAccent.withValues(alpha: animation.value),
-              AppColors.heroAccent.withValues(alpha: 0.0),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}
-
-/// Radial vignette overlay for cinematic depth.
 class _Vignette extends StatelessWidget {
   const _Vignette();
 

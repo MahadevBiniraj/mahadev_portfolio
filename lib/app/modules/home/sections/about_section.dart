@@ -16,6 +16,9 @@ import 'package:flutter_web_portfolio/app/widgets/animated_stats.dart';
 import 'package:flutter_web_portfolio/app/widgets/scroll_fade_in.dart';
 import 'package:flutter_web_portfolio/app/widgets/skill_bar_chart.dart';
 import 'package:flutter_web_portfolio/app/widgets/skill_orbit.dart';
+import 'package:flutter_web_portfolio/app/widgets/premium_cta_button.dart';
+import 'package:flutter_web_portfolio/app/controllers/scroll_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// About Section — "The Introduction"
 /// Giant watermark, flashlight photo, floating tech pills.
@@ -47,7 +50,7 @@ class AboutSection extends StatelessWidget {
                   desktop: screenWidth * 0.18,
                 ),
                 fontWeight: FontWeight.w800,
-                color: Colors.white.withValues(alpha: 0.03),
+                color: Colors.white.withValues(alpha: 0.015),
                 letterSpacing: -4,
               ),
             )),
@@ -127,9 +130,18 @@ class AboutSection extends StatelessWidget {
       const SizedBox(width: 48),
       Expanded(
         flex: 2,
-        child: ScrollFadeIn(
-          delay: AppDurations.staggerMedium,
-          child: _FlashlightPhoto(),
+        child: Column(
+          children: [
+            ScrollFadeIn(
+              delay: AppDurations.staggerMedium,
+              child: _FlashlightPhoto(),
+            ),
+            const SizedBox(height: 32),
+            ScrollFadeIn(
+              delay: AppDurations.staggerLong,
+              child: _FlutterTechAssets(),
+            ),
+          ],
         ),
       ),
     ],
@@ -142,6 +154,11 @@ class AboutSection extends StatelessWidget {
       ScrollFadeIn(
         delay: AppDurations.staggerMedium,
         child: _BioContent(data: data, languageController: languageController),
+      ),
+      const SizedBox(height: 40),
+      ScrollFadeIn(
+        delay: AppDurations.staggerLong,
+        child: _FlutterTechAssets(),
       ),
     ],
   );
@@ -273,6 +290,41 @@ class _BioContentState extends State<_BioContent>
               barHeight: isMobile ? 20.0 : 28.0,
             );
           }),
+        ),
+        const SizedBox(height: 48),
+        // CTA Buttons
+        Wrap(
+          spacing: 16,
+          runSpacing: 16,
+          children: [
+            PremiumCTAButton(
+              label: widget.languageController.getText(
+                'home_section.view_work',
+                defaultValue: 'View My Work',
+              ),
+              isPrimary: true,
+              icon: Icons.arrow_forward_rounded,
+              onTap: () => Get.find<AppScrollController>()
+                  .scrollToSection('projects'),
+            ),
+            PremiumCTAButton(
+              label: widget.languageController.getText(
+                'home_section.download_cv',
+                defaultValue: 'Download CV',
+              ),
+              icon: Icons.download_rounded,
+              onTap: () async {
+                final origin = Uri.base.origin;
+                final basePath = Uri.base.path.endsWith('/')
+                    ? Uri.base.path
+                    : '${Uri.base.path}/';
+                final uri = Uri.parse('$origin${basePath}assets/data/cv.pdf');
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
+                }
+              },
+            ),
+          ],
         ),
       ],
     );
@@ -500,4 +552,54 @@ class _FlashlightPhotoState extends State<_FlashlightPhoto> {
         ),
       ),
     );
+}
+
+class _FlutterTechAssets extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.03),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.05),
+                width: 1,
+              ),
+            ),
+            child: Image.asset(
+              'assets/images/flutter_mockup.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.03),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.05),
+                      width: 1,
+                    ),
+                  ),
+                  child: Image.asset(
+                    'assets/images/flutter_3d_logo.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }

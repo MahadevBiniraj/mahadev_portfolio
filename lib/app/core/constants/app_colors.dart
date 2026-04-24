@@ -5,46 +5,46 @@ final class AppColors {
   const AppColors._();
 
   // ─── Base (dark) ────────────────────────────────────────────────────
-  static const background = Color(0xFF030014);
-  static const backgroundDark = Color(0xFF010008);
-  static const backgroundLight = Color(0xFF0F0A2A);
-  static const backgroundHover = Color(0xFF1A1145);
+  static const background = Color(0xFF050505);
+  static const backgroundDark = Color(0xFF020202);
+  static const backgroundLight = Color(0xFF0D0D0D);
+  static const backgroundHover = Color(0xFF141414);
 
   // ─── Text hierarchy (dark) ──────────────────────────────────────────
-  static const textBright = Color(0xFFE8ECF4);
-  static const textPrimary = Color(0xFF94A3B8);
-  static const textSecondary = Color(0xFF475569);
-  static const white = Color(0xFFF8FAFC);
+  static const textBright = Color(0xFFF8FAFC);
+  static const textPrimary = Color(0xFFCBD5E1);
+  static const textSecondary = Color(0xFF64748B);
+  static const white = Color(0xFFFFFFFF);
 
-  // ─── Scene: Hero — Blade Runner 2049 ──────────────────────────────
-  static const heroGradient1 = Color(0xFF1E0B3E);
-  static const heroGradient2 = Color(0xFF2D1055);
-  static const heroGradient3 = Color(0xFF0891B2);
-  static const heroAccent = Color(0xFF06B6D4);
+  // ─── Scene: Hero — Professional Navy ────────────────────────────────
+  static const heroGradient1 = Color(0xFF020617);
+  static const heroGradient2 = Color(0xFF0F172A);
+  static const heroGradient3 = Color(0xFF1E293B);
+  static const heroAccent = Color(0xFF0EA5E9);
 
-  // ─── Scene: About — Dune ──────────────────────────────────────────
-  static const aboutGradient1 = Color(0xFF451A03);
-  static const aboutGradient2 = Color(0xFF78350F);
-  static const aboutGradient3 = Color(0xFF1E1B4B);
-  static const aboutAccent = Color(0xFFF59E0B);
+  // ─── Scene: About — Professional Slate ──────────────────────────────
+  static const aboutGradient1 = Color(0xFF0F172A);
+  static const aboutGradient2 = Color(0xFF1E293B);
+  static const aboutGradient3 = Color(0xFF334155);
+  static const aboutAccent = Color(0xFF38BDF8);
 
-  // ─── Scene: Experience — Matrix ────────────────────────────────────
-  static const expGradient1 = Color(0xFF0F4C4C);
+  // ─── Scene: Experience — Emerald Slate ──────────────────────────────
+  static const expGradient1 = Color(0xFF020617);
   static const expGradient2 = Color(0xFF064E3B);
-  static const expGradient3 = Color(0xFF78350F);
+  static const expGradient3 = Color(0xFF022C22);
   static const expAccent = Color(0xFF10B981);
 
-  // ─── Scene: Projects — Spider-Verse ────────────────────────────────
-  static const projGradient1 = Color(0xFF831843);
-  static const projGradient2 = Color(0xFF9F1239);
-  static const projGradient3 = Color(0xFF0C1445);
+  // ─── Scene: Projects — Crimson Slate ────────────────────────────────
+  static const projGradient1 = Color(0xFF020617);
+  static const projGradient2 = Color(0xFF450620);
+  static const projGradient3 = Color(0xFF881337);
   static const projAccent = Color(0xFFF43F5E);
 
-  // ─── Scene: Contact — Interstellar ─────────────────────────────────
-  static const contactGradient1 = Color(0xFF0A0A0A);
-  static const contactGradient2 = Color(0xFF171717);
-  static const contactGradient3 = Color(0xFF1C1C1C);
-  static const contactAccent = Color(0xFFF8FAFC);
+  // ─── Scene: Contact — Pure Executive ────────────────────────────────
+  static const contactGradient1 = Color(0xFF020617);
+  static const contactGradient2 = Color(0xFF0A0A0A);
+  static const contactGradient3 = Color(0xFF171717);
+  static const contactAccent = Color(0xFFF1F5F9);
 
   // ─── Semantic aliases ──────────────────────────────────────────────
   static const accent = heroAccent;
