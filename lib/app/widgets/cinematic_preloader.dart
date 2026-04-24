@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_web_portfolio/app/core/constants/app_colors.dart';
 import 'package:flutter_web_portfolio/app/core/constants/cinematic_curves.dart';
-import 'package:flutter_web_portfolio/app/widgets/preloader_animations.dart';
 import 'package:flutter_web_portfolio/app/widgets/kollywood_title_reveal.dart';
 
 /// Cinematic preloader — a jaw-dropping intro sequence that plays once per
@@ -207,34 +206,7 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
           ),
           child: Stack(
             children: [
-              // Layer 1: Ambient particles
-              Positioned.fill(
-                child: Opacity(
-                  opacity: _bgFade!.value,
-                  child: const PreloaderParticles(
-                    particleCount: 40,
-                    color: AppColors.heroAccent,
-                  ),
-                ),
-              ),
-
-              // Layer 2: Film grain
-              Positioned.fill(
-                child: Opacity(
-                  opacity: _bgFade!.value * 0.6,
-                  child: const PreloaderFilmGrain(opacity: 0.025),
-                ),
-              ),
-
-              // Layer 3: Vignette
-              Positioned.fill(
-                child: Opacity(
-                  opacity: _bgFade!.value,
-                  child: const _Vignette(),
-                ),
-              ),
-
-              // Layer 4: Kollywood Title Reveal
+              // Layer 1: Kollywood Title Reveal (Includes its own smoke, embers, and vignette)
               Positioned.fill(
                 child: KollywoodTitleReveal(
                   displayName: widget.displayName,
@@ -250,26 +222,6 @@ class _CinematicPreloaderState extends State<CinematicPreloader>
 
   // ── Responsive helpers ───────────────────────────────────────────────────
 
-}
-class _Vignette extends StatelessWidget {
-  const _Vignette();
-
-  @override
-  Widget build(BuildContext context) => IgnorePointer(
-    child: DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: RadialGradient(
-          center: Alignment.center,
-          radius: 1.0,
-          colors: [
-            Colors.transparent,
-            Colors.black.withValues(alpha: 0.4),
-          ],
-          stops: const [0.4, 1.0],
-        ),
-      ),
-    ),
-  );
 }
 
 /// Clips the child to everything *outside* an expanding circle,
