@@ -1,0 +1,435 @@
+{
+  "app_name": "Mahadev Biniraj - Portfolio",
+  "navigation": {
+    "items": [
+      {
+        "id": "home",
+        "title": "Home"
+      },
+      {
+        "id": "about",
+        "title": "About"
+      },
+      {
+        "id": "experience",
+        "title": "Experience"
+      },
+      {
+        "id": "projects",
+        "title": "Projects"
+      },
+      {
+        "id": "skills",
+        "title": "Skills"
+      },
+      {
+        "id": "contact",
+        "title": "Contact"
+      }
+    ]
+  },
+  "translations": {
+    "app_name": "Mahadev Biniraj - Portfolio",
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "explore_more": "Explore More",
+    "personal_info": "Personal Info",
+    "education": "Education",
+    "languages": "Languages",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "send_message": "Send Message",
+    "contact_me": "Contact Me",
+    "your_name": "Your Name",
+    "your_email": "Your Email",
+    "your_message": "Your Message",
+    "send": "Send",
+    "subject": "Subject",
+    "portfolio_loading": "Portfolio Loading...",
+    "error_name": "Please enter your name",
+    "error_email": "Please enter a valid email",
+    "error_subject": "Please enter a subject",
+    "error_message": "Please enter your message"
+  },
+  "animations": {
+    "loading_animation": "assets/animations/loading.json",
+    "scroll_animation_duration": 500,
+    "page_transition_duration": 300
+  },
+  "social_links": {
+    "github": "https://github.com/MahadevBiniraj",
+    "linkedin": "https://linkedin.com/in/mahadevbiniraj",
+    "medium": ""
+  },
+  "cv_data": {
+    "personal_info": {
+      "name": "Mahadev Biniraj",
+      "title": "Flutter Developer",
+      "phone": "+91 8921810225",
+      "email": "mahadevbiniraj6@gmail.com",
+      "location": "Alappuzha, Kerala",
+      "github": "https://github.com/MahadevBiniraj",
+      "linkedin": "https://linkedin.com/in/mahadevbiniraj",
+      "bio": "Flutter Developer with strong knowledge of Dart and the Flutter framework. Skilled in building responsive mobile applications, integrating REST APIs, and managing state using Provider. Familiar with using Generative AI tools to improve development efficiency, debugging, and problem-solving. Quick learner with a passion for clean UI and continuous improvement. I am also passionate about coding and sports.",
+      "tagline": "Passionate Flutter Developer building clean and responsive mobile experiences.",
+      "medium": "",
+      "stats": {
+        "years_experience": 1,
+        "projects_completed": 5,
+        "technologies": 10
+      },
+      "subtitles": [
+        "Flutter Developer",
+        "Dart Enthusiast",
+        "Mobile App Architect"
+      ]
+    },
+    "experiences": [
+      {
+        "title": "Flutter Developer",
+        "company": "Techmindz",
+        "position": "Intern",
+        "start_date": "Nov 2025",
+        "end_date": "Dec 2025",
+        "period": "11/2025 – 12/2025",
+        "location": "Kochi",
+        "description": "Built responsive Flutter applications using Dart and Material widgets, integrated REST APIs with JSON handling, implemented basic Provider state management, and worked with Firebase Authentication and Firestore.",
+        "technologies": [
+          "Flutter",
+          "Dart",
+          "REST API",
+          "Provider",
+          "Firebase"
+        ]
+      },
+      {
+        "title": "Technical Consultant (ERP – Odoo)",
+        "company": "Oscilix",
+        "position": "Consultant",
+        "start_date": "Mar 2025",
+        "end_date": "Jul 2025",
+        "period": "03/2025 – 07/2025",
+        "location": "Bengaluru",
+        "description": "Assisted in ERP implementation and customization using Odoo while collaborating with team members to understand and streamline business workflows.",
+        "technologies": [
+          "Odoo",
+          "ERP",
+          "Python"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "E-commerce App",
+        "description": "Developed an e-commerce mobile application using Flutter and Fake Store REST APIs, implementing product listing, cart management, and user authentication, with state management handled using Provider and login persistence using Shared Preferences.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "REST API", "Provider", "Shared Preferences"],
+        "case_study": {
+          "problem": "Developing a scalable e-commerce solution with real-time API data and local state management.",
+          "solution": "Used Flutter for the UI, Provider for state management, and integrated Fake Store API for product data.",
+          "result": "A fully functional e-commerce app with cart and authentication features."
+        }
+      },
+      {
+        "title": "Daily News App",
+        "description": "Built a Flutter news app using REST API with Provider state management, category/country filters.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "REST API", "Provider"],
+        "case_study": {
+          "problem": "Providing users with real-time news updates filtered by categories and regions.",
+          "solution": "Integrated a News REST API and implemented dynamic filtering using Provider.",
+          "result": "A responsive news application with personalized content filtering."
+        }
+      },
+      {
+        "title": "Social Media App",
+        "description": "Developed an Instagram-style social media application using Flutter, implementing feed UI, likes, profile screens, and state management with Provider, along with mock login using SharedPreferences.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Provider", "Shared Preferences"],
+        "case_study": {
+          "problem": "Creating a complex social media UI with interactive elements and persistent login.",
+          "solution": "Built custom widgets for feed and profiles, used Provider for state, and SharedPreferences for session management.",
+          "result": "A smooth Instagram-like experience with functional feed and profile management."
+        }
+      },
+      {
+        "title": "Fitness Social Media App",
+        "description": "Developed a Flutter based fitness social media application.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Dart"],
+        "case_study": {
+          "problem": "Connecting fitness enthusiasts through a dedicated mobile platform.",
+          "solution": "Designed a community-focused UI for sharing fitness progress and routines.",
+          "result": "An engaging social platform tailored for the fitness community."
+        }
+      },
+      {
+        "title": "Quiz App",
+        "description": "Designed and implemented a Flutter Quiz App with multiple choice questions, button-based options, score calculation logic, result screen with remarks, and app restart feature.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Dart"],
+        "case_study": {
+          "problem": "Building an interactive quiz experience with real-time scoring and feedback.",
+          "solution": "Implemented complex logic for question handling and score calculation with a clean result UI.",
+          "result": "An intuitive quiz app that provides instant feedback and allows users to restart easily."
+        }
+      },
+      {
+        "title": "Note App",
+        "description": "Developed a Flutter Note Application with login, registration, and home screens, enabling users to create, edit, and delete notes, with local data persistence using the Hive database.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Hive", "Local Storage"],
+        "case_study": {
+          "problem": "Creating a reliable note-taking app with offline support and user accounts.",
+          "solution": "Used Hive for high-performance local storage and implemented a secure authentication flow.",
+          "result": "A robust note application allowing users to manage their thoughts securely even offline."
+        }
+      }
+    ],
+    "education": [
+      {
+        "school": "St. Thomas College of Engineering And Technology",
+        "degree": "B-Tech - Computer Science",
+        "period": "2019 – 2023",
+        "location": "Chengannur, Kerala",
+        "cgpa": "7.23 (First class)"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Mobile",
+        "items": [
+          "Flutter & Dart",
+          "Stateless/Stateful Widgets",
+          "Responsive UI Design",
+          "Material Design",
+          "Provider (State Management)",
+          "Shared Preferences"
+        ]
+      },
+      {
+        "category": "Backend & Storage",
+        "items": [
+          "REST API Integration",
+          "JSON Parsing",
+          "Firebase Authentication",
+          "Firestore",
+          "Hive Database",
+          "SQL"
+        ]
+      },
+      {
+        "category": "Architecture & Basics",
+        "items": [
+          "MVC / MVVM Architecture",
+          "Java & C Basics",
+          "Generative AI Tools"
+        ]
+      },
+      {
+        "category": "Tools",
+        "items": [
+          "Git & GitHub",
+          "Android Development",
+          "VS Code"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "level": "Fluent"
+      },
+      {
+        "name": "Malayalam",
+        "level": "Native"
+      },
+      {
+        "name": "Tamil",
+        "level": "Conversational"
+      }
+    ],
+    "testimonials": [],
+    "contact": {
+      "formspree_id": "mahadevbiniraj6@gmail.com",
+      "form": {
+        "name_label": "Name",
+        "email_label": "Email",
+        "message_label": "Message",
+        "submit_button": "Send"
+      },
+      "success_message": "Your message has been sent successfully!",
+      "error_message": "An error occurred. Please try again."
+    }
+  },
+  "language_info": {
+    "code": "en",
+    "name": "English",
+    "flag": "🇬🇧",
+    "direction": "ltr"
+  },
+  "terminal": {
+    "title": "Terminal",
+    "welcome_title": "Mahadev Biniraj - Terminal",
+    "welcome_text": "Welcome! Type 'help' to see available commands.",
+    "help_hint": "Tip: Type 'help' to see available commands",
+    "greeting": "Terminal",
+    "type_help": "Type 'help' to see available commands",
+    "help_title": "Available Commands:",
+    "cleared": "Terminal cleared...",
+    "command_not_found": "Command '%s' not found. Type 'help' to see available commands.",
+    "prefix": "> ",
+    "type_command": "Type a command...",
+    "url": {
+      "success": "Opening link in browser...",
+      "error": "Could not launch link",
+      "error_with_details": "Error launching URL"
+    },
+    "download_cv_start": "Initiating CV download...",
+    "download_cv_success": "CV download started in your browser.",
+    "download_cv_error": "Error downloading CV. Please try again later.",
+    "commands": {
+      "help": "displays available commands",
+      "about": "shows personal information",
+      "skills": "displays technical skills",
+      "experience": "shows work experience",
+      "education": "shows educational background",
+      "projects": "shows completed projects",
+      "contact": "shows contact information",
+      "social": "displays social media accounts",
+      "download_cv": "downloads my resume",
+      "clear": "clears the terminal screen",
+      "help_cmd": "help",
+      "about_cmd": "about",
+      "skills_cmd": "skills",
+      "experience_cmd": "experience",
+      "education_cmd": "education",
+      "projects_cmd": "projects",
+      "contact_cmd": "contact",
+      "social_cmd": "social",
+      "download_cv_cmd": "download-cv",
+      "clear_cmd": "clear"
+    },
+    "projects": {
+      "title": "MY PROJECTS",
+      "untitled": "Untitled Project",
+      "not_found": "No projects found."
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "testimonials": "Testimonials",
+    "blog": "Blog"
+  },
+  "about_section": {
+    "title": "About Me",
+    "bio": "I'm a Flutter Developer with strong knowledge of Dart and the Flutter framework. Skilled in building responsive mobile applications, integrating REST APIs, and managing state using Provider.",
+    "bio2": "Here are a few technologies I've been working with recently:",
+    "github_title": "GitHub Activity",
+    "github_repos": "Repos",
+    "github_followers": "Followers",
+    "github_stars": "Stars",
+    "github_cached": "(cached)"
+  },
+  "projects_section": {
+    "title": "My Projects",
+    "description": "Selection of my recent work and personal projects.",
+    "filter_all": "All",
+    "untitled_project": "Untitled Project",
+    "technologies": "Technologies",
+    "open_project": "Open Project",
+    "case_study_problem": "The Challenge",
+    "case_study_solution": "The Approach",
+    "case_study_result": "The Result",
+    "links": "Links",
+    "link_labels": {
+      "google_play": "Google Play",
+      "app_store": "App Store",
+      "website": "Website"
+    }
+  },
+  "home_section": {
+    "greeting": "Hi, my name is",
+    "title": "Mahadev Biniraj.",
+    "subtitle": "I build things for mobile.",
+    "bio": "I'm a Flutter Developer specializing in building production-grade mobile applications. Focused on crafting pixel-perfect, performant experiences using Flutter and Dart.",
+    "view_work": "View My Work",
+    "download_cv": "Download CV",
+    "contact": "Contact"
+  },
+  "experience_section": {
+    "title": "Where I've Worked",
+    "present": "Present"
+  },
+  "contact_section": {
+    "title": "Get In Touch",
+    "whats_next": "What's Next?",
+    "description": "I'm always open to new challenges and collaborations. Whether you have a project idea, a question, or just want to connect — feel free to reach out!",
+    "form": {
+      "name_label": "Name",
+      "email_label": "Email",
+      "message_label": "Message",
+      "submit_button": "Send Message",
+      "name_error": "Please enter your name",
+      "email_error": "Please enter a valid email",
+      "message_error": "Please enter your message",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again.",
+      "or_divider": "or send a message directly"
+    }
+  },
+  "blog_section": {
+    "title": "Blog",
+    "subtitle": "Technical insights and my journey in Flutter development.",
+    "empty": "No blog posts yet",
+    "read_on_medium": "Read on Medium",
+    "follow_on_medium": "Follow on Medium",
+    "error": "Could not load blog posts",
+    "retry": "Retry"
+  },
+  "testimonials_section": {
+    "title": "What People Say",
+    "subtitle": "Feedback from colleagues and mentors."
+  },
+  "skills_section": {
+    "title": "Skills",
+    "description": "My technical skills and areas of expertise"
+  },
+  "footer": {
+    "view_source": "View Source",
+    "command_hint_prefix": "Press",
+    "command_hint_suffix": "to open command palette"
+  },
+  "sidebar": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "not_found": {
+    "subtitle": "Page not found",
+    "go_home": "Go Home"
+  }
+}

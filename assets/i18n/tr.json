@@ -1,0 +1,435 @@
+{
+  "app_name": "Mahadev Biniraj - Portfolyo",
+  "navigation": {
+    "items": [
+      {
+        "id": "home",
+        "title": "Ana Sayfa"
+      },
+      {
+        "id": "about",
+        "title": "Hakk\u0131mda"
+      },
+      {
+        "id": "experience",
+        "title": "Deneyim"
+      },
+      {
+        "id": "projects",
+        "title": "Projeler"
+      },
+      {
+        "id": "skills",
+        "title": "Yetenekler"
+      },
+      {
+        "id": "contact",
+        "title": "\u0130leti\u015fim"
+      }
+    ]
+  },
+  "translations": {
+    "app_name": "Mahadev Biniraj - Portfolyo",
+    "home": "Ana Sayfa",
+    "about": "Hakk\u0131mda",
+    "experience": "Deneyim",
+    "projects": "Projeler",
+    "skills": "Yetenekler",
+    "contact": "\u0130leti\u015fim",
+    "explore_more": "Daha Fazlas\u0131",
+    "personal_info": "Ki\u015fisel Bilgiler",
+    "education": "E\u011fitim",
+    "languages": "Diller",
+    "name": "\u0130sim",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "location": "Konum",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "send_message": "Mesaj G\u00f6nder",
+    "contact_me": "Benimle \u0130leti\u015fime Ge\u00e7",
+    "your_name": "\u0130sminiz",
+    "your_email": "E-postan\u0131z",
+    "your_message": "Mesaj\u0131n\u0131z",
+    "send": "G\u00f6nder",
+    "subject": "Konu",
+    "portfolio_loading": "Portfolyo Y\u00fckleniyor...",
+    "error_name": "L\u00fctfen isminizi girin",
+    "error_email": "L\u00fctfen ge\u00e7erli bir e-posta girin",
+    "error_subject": "L\u00fctfen bir konu girin",
+    "error_message": "L\u00fctfen mesaj\u0131n\u0131z\u0131 girin"
+  },
+  "animations": {
+    "loading_animation": "assets/animations/loading.json",
+    "scroll_animation_duration": 500,
+    "page_transition_duration": 300
+  },
+  "social_links": {
+    "github": "https://github.com/MahadevBiniraj",
+    "linkedin": "https://linkedin.com/in/mahadevbiniraj",
+    "medium": ""
+  },
+  "cv_data": {
+    "personal_info": {
+      "name": "Mahadev Biniraj",
+      "title": "Flutter Geli\u015ftirici",
+      "phone": "+91 8921810225",
+      "email": "mahadevbiniraj6@gmail.com",
+      "location": "Alappuzha, Kerala",
+      "github": "https://github.com/MahadevBiniraj",
+      "linkedin": "https://linkedin.com/in/mahadevbiniraj",
+      "bio": "Flutter Developer with strong knowledge of Dart and the Flutter framework. Skilled in building responsive mobile applications, integrating REST APIs, and managing state using Provider. Familiar with using Generative AI tools to improve development efficiency, debugging, and problem-solving. Quick learner with a passion for clean UI and continuous improvement. I am also passionate about coding and sports.",
+      "tagline": "Passionate Flutter Developer building clean and responsive mobile experiences.",
+      "medium": "",
+      "stats": {
+        "years_experience": 1,
+        "projects_completed": 5,
+        "technologies": 10
+      },
+      "subtitles": [
+        "Flutter Developer",
+        "Dart Enthusiast",
+        "Mobile App Architect"
+      ]
+    },
+    "experiences": [
+      {
+        "title": "Flutter Developer",
+        "company": "Techmindz",
+        "position": "Intern",
+        "start_date": "Kas 2025",
+        "end_date": "Ara 2025",
+        "period": "11/2025 \u2013 12/2025",
+        "location": "Kochi",
+        "description": "Built responsive Flutter applications using Dart and Material widgets, integrated REST APIs with JSON handling, implemented basic Provider state management, and worked with Firebase Authentication and Firestore.",
+        "technologies": [
+          "Flutter",
+          "Dart",
+          "REST API",
+          "Provider",
+          "Firebase"
+        ]
+      },
+      {
+        "title": "Technical Consultant (ERP \u2013 Odoo)",
+        "company": "Oscilix",
+        "position": "Consultant",
+        "start_date": "Mar 2025",
+        "end_date": "Tem 2025",
+        "period": "03/2025 \u2013 07/2025",
+        "location": "Bengaluru",
+        "description": "Assisted in ERP implementation and customization using Odoo while collaborating with team members to understand and streamline business workflows.",
+        "technologies": [
+          "Odoo",
+          "ERP",
+          "Python"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "E-commerce App",
+        "description": "Developed an e-commerce mobile application using Flutter and Fake Store REST APIs, implementing product listing, cart management, and user authentication, with state management handled using Provider and login persistence using Shared Preferences.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "REST API", "Provider", "Shared Preferences"],
+        "case_study": {
+          "problem": "Developing a scalable e-commerce solution with real-time API data and local state management.",
+          "solution": "Used Flutter for the UI, Provider for state management, and integrated Fake Store API for product data.",
+          "result": "A fully functional e-commerce app with cart and authentication features."
+        }
+      },
+      {
+        "title": "Daily News App",
+        "description": "Built a Flutter news app using REST API with Provider state management, category/country filters.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "REST API", "Provider"],
+        "case_study": {
+          "problem": "Providing users with real-time news updates filtered by categories and regions.",
+          "solution": "Integrated a News REST API and implemented dynamic filtering using Provider.",
+          "result": "A responsive news application with personalized content filtering."
+        }
+      },
+      {
+        "title": "Social Media App",
+        "description": "Developed an Instagram-style social media application using Flutter, implementing feed UI, likes, profile screens, and state management with Provider, along with mock login using SharedPreferences.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Provider", "Shared Preferences"],
+        "case_study": {
+          "problem": "Creating a complex social media UI with interactive elements and persistent login.",
+          "solution": "Built custom widgets for feed and profiles, used Provider for state, and SharedPreferences for session management.",
+          "result": "A smooth Instagram-like experience with functional feed and profile management."
+        }
+      },
+      {
+        "title": "Fitness Social Media App",
+        "description": "Developed a Flutter based fitness social media application.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Dart"],
+        "case_study": {
+          "problem": "Connecting fitness enthusiasts through a dedicated mobile platform.",
+          "solution": "Designed a community-focused UI for sharing fitness progress and routines.",
+          "result": "An engaging social platform tailored for the fitness community."
+        }
+      },
+      {
+        "title": "Quiz App",
+        "description": "Designed and implemented a Flutter Quiz App with multiple choice questions, button-based options, score calculation logic, result screen with remarks, and app restart feature.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Dart"],
+        "case_study": {
+          "problem": "Building an interactive quiz experience with real-time scoring and feedback.",
+          "solution": "Implemented complex logic for question handling and score calculation with a clean result UI.",
+          "result": "An intuitive quiz app that provides instant feedback and allows users to restart easily."
+        }
+      },
+      {
+        "title": "Note App",
+        "description": "Developed a Flutter Note Application with login, registration, and home screens, enabling users to create, edit, and delete notes, with local data persistence using the Hive database.",
+        "category": "Mobile",
+        "technologies": ["Flutter", "Hive", "Local Storage"],
+        "case_study": {
+          "problem": "Creating a reliable note-taking app with offline support and user accounts.",
+          "solution": "Used Hive for high-performance local storage and implemented a secure authentication flow.",
+          "result": "A robust note application allowing users to manage their thoughts securely even offline."
+        }
+      }
+    ],
+    "education": [
+      {
+        "school": "St. Thomas College of Engineering And Technology",
+        "degree": "B-Tech - Computer Science",
+        "period": "2019 \u2013 2023",
+        "location": "Chengannur, Kerala",
+        "cgpa": "7.23 (First class)"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Mobile",
+        "items": [
+          "Flutter & Dart",
+          "Stateless/Stateful Widgets",
+          "Responsive UI Design",
+          "Material Design",
+          "Provider (State Management)",
+          "Shared Preferences"
+        ]
+      },
+      {
+        "category": "Backend & Storage",
+        "items": [
+          "REST API Integration",
+          "JSON Parsing",
+          "Firebase Authentication",
+          "Firestore",
+          "Hive Database",
+          "SQL"
+        ]
+      },
+      {
+        "category": "Architecture & Basics",
+        "items": [
+          "MVC / MVVM Architecture",
+          "Java & C Basics",
+          "Generative AI Tools"
+        ]
+      },
+      {
+        "category": "Tools",
+        "items": [
+          "Git & GitHub",
+          "Android Development",
+          "VS Code"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": "\u0130ngilizce",
+        "level": "Ak\u0131c\u0131"
+      },
+      {
+        "name": "Malayalam",
+        "level": "Anadil"
+      },
+      {
+        "name": "Tamil",
+        "level": "G\u00fcnl\u00fck"
+      }
+    ],
+    "testimonials": [],
+    "contact": {
+      "formspree_id": "mahadevbiniraj6@gmail.com",
+      "form": {
+        "name_label": "\u0130sim",
+        "email_label": "E-posta",
+        "message_label": "Mesaj",
+        "submit_button": "G\u00f6nder"
+      },
+      "success_message": "Mesaj\u0131n\u0131z ba\u015far\u0131yla g\u00f6nderildi!",
+      "error_message": "Bir hata olu\u015ftu. L\u00fctfen tekrar deneyin."
+    }
+  },
+  "language_info": {
+    "code": "tr",
+    "name": "T\u00fcrk\u00e7e",
+    "flag": "\ud83c\uddf9\ud83c\uddf7",
+    "direction": "ltr"
+  },
+  "terminal": {
+    "title": "Terminal",
+    "welcome_title": "Mahadev Biniraj - Terminal",
+    "welcome_text": "Ho\u015fgeldiniz! Mevcut komutlar\u0131 g\u00f6rmek i\u00e7in 'help' yaz\u0131n.",
+    "help_hint": "\u0130pucu: Mevcut komutlar\u0131 g\u00f6rmek i\u00e7in 'help' yaz\u0131n",
+    "greeting": "Terminal",
+    "type_help": "Mevcut komutlar\u0131 g\u00f6rmek i\u00e7in 'help' yaz\u0131n",
+    "help_title": "Mevcut Komutlar:",
+    "cleared": "Terminal temizlendi...",
+    "command_not_found": "'%s' komutu bulunamad\u0131. Yard\u0131m i\u00e7in 'help' yaz\u0131n.",
+    "prefix": "> ",
+    "type_command": "Bir komut yaz\u0131n...",
+    "url": {
+      "success": "Ba\u011flant\u0131 taray\u0131c\u0131da a\u00e7\u0131l\u0131yor...",
+      "error": "Ba\u011flant\u0131 a\u00e7\u0131lamad\u0131",
+      "error_with_details": "URL a\u00e7\u0131l\u0131rken hata"
+    },
+    "download_cv_start": "CV indirme ba\u015flat\u0131l\u0131yor...",
+    "download_cv_success": "CV indirme taray\u0131c\u0131n\u0131zda ba\u015flat\u0131ld\u0131.",
+    "download_cv_error": "CV indirilirken hata olu\u015ftu. L\u00fctfen daha sonra tekrar deneyin.",
+    "commands": {
+      "help": "mevcut komutlar\u0131 g\u00f6sterir",
+      "about": "ki\u015fisel bilgileri g\u00f6sterir",
+      "skills": "teknik yetenekleri g\u00f6sterir",
+      "experience": "\u0130\u015f deneyimini g\u00f6sterir",
+      "education": "e\u011fitim ge\u00e7mi\u015fini g\u00f6sterir",
+      "projects": "tamamlanan projeleri g\u00f6sterir",
+      "contact": "\u0130leti\u015fim bilgilerini g\u00f6sterir",
+      "social": "sosyal medya hesaplar\u0131n\u0131 g\u00f6sterir",
+      "download_cv": "ozgecmisimi indirir",
+      "clear": "terminal ekran\u0131n\u0131 temizler",
+      "help_cmd": "help",
+      "about_cmd": "about",
+      "skills_cmd": "skills",
+      "experience_cmd": "experience",
+      "education_cmd": "education",
+      "projects_cmd": "projects",
+      "contact_cmd": "contact",
+      "social_cmd": "social",
+      "download_cv_cmd": "download-cv",
+      "clear_cmd": "clear"
+    },
+    "projects": {
+      "title": "PROJELER\u0130M",
+      "untitled": "Ads\u0131z Proje",
+      "not_found": "Proje bulunamad\u0131."
+    },
+    "contact": {
+      "email": "E-posta",
+      "phone": "Telefon",
+      "location": "Konum"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakk\u0131mda",
+    "skills": "Yetenekler",
+    "experience": "Deneyim",
+    "projects": "Projeler",
+    "contact": "\u0130leti\u015fim",
+    "testimonials": "Referanslar",
+    "blog": "Blog"
+  },
+  "about_section": {
+    "title": "Hakk\u0131mda",
+    "bio": "I'm a Flutter Developer with strong knowledge of Dart and the Flutter framework. Skilled in building responsive mobile applications, integrating REST APIs, and managing state using Provider.",
+    "bio2": "Son zamanlarda \u00fczerinde \u00e7al\u0131\u015ft\u0131\u011f\u0131m baz\u0131 teknolojiler:",
+    "github_title": "GitHub Aktivitesi",
+    "github_repos": "Repo",
+    "github_followers": "Takip\u00e7i",
+    "github_stars": "Y\u0131ld\u0131z",
+    "github_cached": "(cached)"
+  },
+  "projects_section": {
+    "title": "Projelerim",
+    "description": "Son projelerim ve ki\u015fisel \u00e7al\u0131\u015fmalar\u0131m.",
+    "filter_all": "Hepsi",
+    "untitled_project": "Ads\u0131z Proje",
+    "technologies": "Teknolojiler",
+    "open_project": "Projeyi A\u00e7",
+    "case_study_problem": "Sorun",
+    "case_study_solution": "\u00c7\u00f6z\u00fcm",
+    "case_study_result": "Sonu\u00e7",
+    "links": "Ba\u011flant\u0131lar",
+    "link_labels": {
+      "google_play": "Google Play",
+      "app_store": "App Store",
+      "website": "Web Sitesi"
+    }
+  },
+  "home_section": {
+    "greeting": "Merhaba, ben",
+    "title": "Mahadev Biniraj.",
+    "subtitle": "Mobil d\u00fcnya i\u00e7in \u00fcretiyorum.",
+    "bio": "I'm a Flutter Developer specializing in building production-grade mobile applications. Focused on crafting pixel-perfect, performant experiences using Flutter and Dart.",
+    "view_work": "\u00c7al\u0131\u015fmalar\u0131m\u0131 G\u00f6r",
+    "download_cv": "CV \u0130ndir",
+    "contact": "\u0130leti\u015fim"
+  },
+  "experience_section": {
+    "title": "Nerede \u00c7al\u0131\u015ft\u0131m",
+    "present": "G\u00fcn\u00fcm\u00fcz"
+  },
+  "contact_section": {
+    "title": "\u0130leti\u015fime Ge\u00e7",
+    "whats_next": "S\u0131rada Ne Var?",
+    "description": "Her zaman yeni zorluklara ve i\u015f birliklerine a\u00e7\u0131\u011f\u0131m. Bir proje fikriniz, bir sorunuz varsa veya sadece ba\u011flant\u0131 kurmak istiyorsan\u0131z \u2014 \u00e7ekinmeden ula\u015f\u0131n!",
+    "form": {
+      "name_label": "\u0130sim",
+      "email_label": "E-posta",
+      "message_label": "Mesaj",
+      "submit_button": "Mesaj G\u00f6nder",
+      "name_error": "L\u00fctfen isminizi girin",
+      "email_error": "L\u00fctfen ge\u00e7erli bir e-posta girin",
+      "message_error": "L\u00fctfen mesaj\u0131n\u0131z\u0131 girin",
+      "success": "Mesaj\u0131n\u0131z ba\u015far\u0131yla g\u00f6nderildi!",
+      "error": "Bir hata olu\u015ftu. L\u00fctfen tekrar deneyin.",
+      "or_divider": "veya do\u011frudan mesaj g\u00f6nderin"
+    }
+  },
+  "blog_section": {
+    "title": "Blog",
+    "subtitle": "Teknik incelemeler ve Flutter geli\u015ftirme yolculu\u011fum.",
+    "empty": "Hen\u00fcz blog yaz\u0131s\u0131 yok",
+    "read_on_medium": "Medium'da Oku",
+    "follow_on_medium": "Medium'da Takip Et",
+    "error": "Blog yaz\u0131lar\u0131 y\u00fcklenemedi",
+    "retry": "Tekrar Dene"
+  },
+  "testimonials_section": {
+    "title": "\u0130nsanlar Ne Diyor",
+    "subtitle": "\u0130\u015f arkada\u015flar\u0131m ve ment\u00f6rlerimden geri bildirimler."
+  },
+  "skills_section": {
+    "title": "Yetenekler",
+    "description": "Teknik yeteneklerim ve uzmanl\u0131k alanlar\u0131m"
+  },
+  "footer": {
+    "view_source": "Kayna\u011f\u0131 G\u00f6r\u00fcnt\u0131le",
+    "command_hint_prefix": "Komut paletini a\u00e7mak i\u00e7in",
+    "command_hint_suffix": "tu\u015funa bas\u0131n"
+  },
+  "sidebar": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-posta"
+  },
+  "not_found": {
+    "subtitle": "Sayfa bulunamad\u0131",
+    "go_home": "Ana Sayfaya D\u00f6n"
+  }
+}
