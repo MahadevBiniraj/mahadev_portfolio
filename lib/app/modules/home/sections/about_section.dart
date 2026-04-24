@@ -480,7 +480,7 @@ class _FlashlightPhotoState extends State<_FlashlightPhoto> {
               image: true,
               label: 'Profile photo',
               child: Image.asset(
-                'assets/images/mahadev.png',
+                'assets/images/my blue pic.png',
                 width: double.infinity,
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => AspectRatio(
